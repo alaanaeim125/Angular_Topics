@@ -5,8 +5,8 @@
   Display All Users
 </h4>
 
-<div class="user" *ngFor="let user of users">
-  <h5>
+<div class="user" *ngFor="let user of users;  index as userid">
+  <h5 [title]="user.name + ' details'" [routerLink]="['/products', userid ]">
     {{ user.name }}
   </h5>
   <p>{{ user.age }} Years</p>
@@ -17,5 +17,7 @@
     <button (click)="share(user)" class="btn btn-danger btn-sm">
       Notify Data
     </button>
+
+    <button class="btn btn-sm btn-success" (click)="navigateToProductDetails(userid, user)">see Details</button>
   </p>
 </div>
