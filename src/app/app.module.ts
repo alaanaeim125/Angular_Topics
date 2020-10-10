@@ -6,19 +6,27 @@ import { AppComponent } from './app.component';
 import { ProductsListComponent } from './components/share_data/products-list/products-list.component';
 import { ProductsComponent } from './components/share_data/products/products.component';
 import { ProductDetailsComponent } from './components/share_data/product-details/product-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CartService } from './services/cart.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,5 +10,14 @@
     <h5>
         {{userComming.job}}
     </h5>
+    <p>
+        <button class="btn btn-sm btn-danger" (click)="addToCart()" [disabled]="addedToCart">AddToCart</button>
+    </p>
+    <p>
+        <button class="btn btn-sm btn-success" (click)="clearCart()">ClearCart</button>
+    </p>
+    <p>
+        <button class="btn btn-sm btn-info" (click)="getAllUsers()">getAllUsers</button>
+    </p>
 </div>
 
