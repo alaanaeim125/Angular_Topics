@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartService } from './services/cart.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReactiveFormsComponent } from './components/reactive-forms/reactive-for
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

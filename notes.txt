@@ -1,0 +1,11 @@
+to deploy on github
+
+npm i -g angular-cli-ghpages
+ng build --prod --base-href "https://alaanaeim125.github.io/Angular_Topics"
+ngh --dir dist/angularDocs
+
+
+alaanaeim125
+Angular_Topics
+angularDocs
+

@@ -1,4 +1,4 @@
-<!-- <div class="row">
+<div class="row">
   <div class="col-4"></div>
   <div class="col-4">
     <form [formGroup]="formSign" (ngSubmit)="submitForm()">
@@ -10,6 +10,26 @@
           id="exampleInputEmail1"
           formControlName="username"
         />
+
+        <div *ngIf="username.untouched">
+          <div>
+            Please username Is Required
+          </div>
+        </div>
+        <div *ngIf="username.touched && username.invalid">
+          <div *ngIf="username?.errors['required']">
+            Please username Is Required
+          </div>
+
+          <div *ngIf="username?.errors['minlength']">
+            Please minLength Is 6 Char
+          </div>
+
+          <div *ngIf="username?.errors['pattern']">
+            please match email form such a@gmail.com
+          </div>
+
+        </div>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
@@ -19,11 +39,23 @@
           id="exampleInputPassword1"
           formControlName="password"
         />
+
+        <div *ngIf="password.touched && password.invalid">
+          <div *ngIf="password?.errors['required']">
+            Please username Is Required
+          </div>
+
+          <div *ngIf="password?.errors['minlength']">
+            Please minLength Is 6 Char
+          </div>
+
+        </div>
+
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary">Submit</button>
     </form>
   </div>
-</div> -->
+</div>
 
 <!-- <div class="row">
   <div class="col-4"></div>
@@ -50,9 +82,9 @@
   </div>
 </div> -->
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-4"></div>
-  <div class="col-4">
+  <div class="col-4 ReactiveForm">
     <form [formGroup]="formItems" (ngSubmit)="submitForm()">
       <div class="form-group">
         <input type="text" class="form-control" formControlName="fname" />
@@ -60,9 +92,9 @@
 
       <div class="form-group">
         <input type="email" class="form-control" formControlName="sname" />
-      </div>
+      </div> -->
 
-      <div
+      <!-- <div
         formArrayName="items"
         *ngFor="let item of formItemsControlls; let i = index"
       >
@@ -74,12 +106,12 @@
             <input formControlName="phone" type="text" class="form-control" />
           </div>
         </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      </div> -->
+      <!-- <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <br />
     <button class="btn btn-danger btn-sm" (click)="pushItem()">
       Add New Address
     </button>
   </div>
-</div>
+</div> -->
